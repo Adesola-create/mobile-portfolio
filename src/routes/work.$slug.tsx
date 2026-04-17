@@ -57,7 +57,7 @@ function ProjectNotFound() {
 }
 
 function ProjectPage() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: import("@/data/projects").Project };
   const currentIndex = projects.findIndex((p) => p.slug === project.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
