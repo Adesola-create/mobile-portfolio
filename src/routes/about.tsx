@@ -1,0 +1,121 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import portrait from "@/assets/portrait.jpg";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About — Maya Chen" },
+      {
+        name: "description",
+        content:
+          "About Maya Chen — eight years designing and building mobile apps for wellness, fitness, finance and food brands.",
+      },
+      { property: "og:title", content: "About — Maya Chen" },
+      {
+        property: "og:description",
+        content:
+          "Eight years designing and building mobile apps for thoughtful teams.",
+      },
+    ],
+  }),
+  component: AboutPage,
+});
+
+const skills = [
+  { label: "Design", items: ["Product design", "Interaction", "Motion", "Brand systems"] },
+  { label: "Engineering", items: ["SwiftUI", "Kotlin", "React Native", "TypeScript"] },
+  { label: "Tools", items: ["Figma", "Xcode", "Android Studio", "Linear"] },
+];
+
+const timeline = [
+  { year: "2024", role: "Independent designer & developer", note: "Wellness, fitness, finance" },
+  { year: "2022", role: "Senior product designer · Lyft", note: "Driver experience" },
+  { year: "2019", role: "iOS engineer · Headspace", note: "Meditation team" },
+  { year: "2017", role: "BFA Interaction Design · RISD", note: "" },
+];
+
+function AboutPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+      <div className="grid gap-16 md:grid-cols-12">
+        <div className="fade-in md:col-span-5">
+          <div className="overflow-hidden rounded-2xl bg-muted">
+            <img
+              src={portrait}
+              alt="Portrait of Maya Chen"
+              width={1024}
+              height={1280}
+              className="aspect-[4/5] w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="fade-in-up md:col-span-7">
+          <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+          <h1 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl">
+            I make mobile apps that feel quiet, considered and a little warmer than
+            you&apos;d expect.
+          </h1>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">
+            <p>
+              For the last eight years I&apos;ve worked at the intersection of design
+              and engineering — first inside teams at Headspace and Lyft, now
+              independently from a small studio in Lisbon.
+            </p>
+            <p>
+              I focus on a handful of clients each year. The work is usually end to
+              end: research, product design, prototyping, and shipping the real
+              thing in SwiftUI, Kotlin or React Native.
+            </p>
+            <p>
+              Outside of client work I write about craft, mentor early-career
+              designers, and run very slowly along the river.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+            {skills.map((group) => (
+              <div key={group.label}>
+                <h3 className="text-sm font-medium text-foreground">{group.label}</h3>
+                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16">
+            <h3 className="font-display text-2xl text-foreground">Path</h3>
+            <ul className="mt-6 divide-y divide-border">
+              {timeline.map((entry) => (
+                <li
+                  key={entry.year + entry.role}
+                  className="grid grid-cols-[80px_1fr] gap-6 py-4 text-sm"
+                >
+                  <span className="text-muted-foreground">{entry.year}</span>
+                  <div>
+                    <p className="text-foreground">{entry.role}</p>
+                    {entry.note && (
+                      <p className="mt-0.5 text-muted-foreground">{entry.note}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-12">
+            <Link
+              to="/contact"
+              className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm text-primary-foreground transition-colors duration-300 hover:bg-accent"
+            >
+              Work together
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
