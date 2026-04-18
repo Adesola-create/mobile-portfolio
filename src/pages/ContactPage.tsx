@@ -1,18 +1,15 @@
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
 
 function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status] = useState<"idle">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
-    const { error } = await supabase.from("messages").insert([data]);
-    if (error) { setStatus("error"); return; }
-    setStatus("success");
-    form.reset();
+    const data = Object.fromEntries(new FormData(form)) as { name: string; email: string; message: string };
+    const subject = encodeURIComponent(`Portfolio enquiry from ${data.name}`);
+    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+    window.location.href = `mailto:adesola@email.com?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -31,10 +28,9 @@ function ContactForm() {
         <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground" htmlFor="message">Message</label>
         <textarea id="message" name="message" required rows={5} className="mt-2 w-full border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground/50 focus:border-accent focus:outline-none resize-none" placeholder="Tell me about your project…" />
       </div>
-      <button type="submit" disabled={status === "loading" || status === "success"} className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm text-primary-foreground transition-colors hover:bg-accent disabled:opacity-50">
-        {status === "loading" ? "Sending…" : status === "success" ? "Sent ✓" : "Send message"}
+      <button type="submit" className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm text-primary-foreground transition-colors hover:bg-accent">
+        Send message
       </button>
-      {status === "error" && <p className="text-sm text-red-500">Something went wrong. Please try again.</p>}
     </form>
   );
 }
@@ -82,7 +78,7 @@ export default function ContactPage() {
         </div>
 
         <p className="mt-16 text-sm text-muted-foreground">
-          Currently based in Lisbon · Working with teams worldwide
+          Currently based in Nigeria · Working with teams worldwide
         </p>
       </div>
     </section>

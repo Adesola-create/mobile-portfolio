@@ -5,7 +5,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-base text-foreground">Adesola Adeyemi</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Mobile app designer & developer · Based in Lisbon
+            Mobile app designer & developer · Based in Nigeria
           </p>
         </div>
         <div className="flex items-center gap-6 text-sm text-muted-foreground">

@@ -3,15 +3,15 @@ import portrait from "@/assets/portrait.jpg";
 
 const skills = [
   { label: "Design", items: ["Product design", "Interaction", "Motion", "Brand systems"] },
-  { label: "Engineering", items: ["SwiftUI", "Kotlin", "React Native", "TypeScript"] },
-  { label: "Tools", items: ["Figma", "Xcode", "Android Studio", "Linear"] },
+  { label: "Engineering", items: ["SwiftUI", "Kotlin", "Flutter"] },
+  { label: "Tools", items: ["Figma", "VScode", "Android Studio", "Git"] },
 ];
 
 const timeline = [
-  { year: "2024", role: "Independent designer & developer", note: "Wellness, fitness, finance" },
-  { year: "2022", role: "Senior product designer · Lyft", note: "Driver experience" },
-  { year: "2019", role: "iOS engineer · Headspace", note: "Meditation team" },
-  { year: "2017", role: "BFA Interaction Design · RISD", note: "" },
+  { year: "2026", role: "Senior mobile app developer · Livepetal", note: "Business Solutions" },
+  { year: "2024", role: "Independent designer & developer", note: "Education, finance" },
+  
+  
 ];
 
 export default function AboutPage() {
@@ -38,18 +38,16 @@ export default function AboutPage() {
           </h1>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
-              For the last eight years I&apos;ve worked at the intersection of design
-              and engineering — first inside teams at Headspace and Lyft, now
-              independently from a small studio in Lisbon.
+              For the last three years I&apos;ve worked at the intersection of design
+              and engineering — inside teams at Livepetal Systems Limited in Nigeria.
             </p>
             <p>
               I focus on a handful of clients each year. The work is usually end to
               end: research, product design, prototyping, and shipping the real
-              thing in SwiftUI, Kotlin or React Native.
+              thing in SwiftUI, Kotlin or Flutter.
             </p>
             <p>
-              Outside of client work I write about craft, mentor early-career
-              designers, and run very slowly along the river.
+              Outside of client work, I design and style unisex outfits, exploring fabrics, colors, and form. This creative practice sharpens my sense of aesthetics and directly influences my approach to UI/UX design, where I focus on clarity, balance, and expressive user experiences.
             </p>
           </div>
 

@@ -16,7 +16,7 @@ export default function IndexPage() {
       <section className="mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
         <div className="fade-in-up max-w-3xl">
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
-            Independent · Available for new work in 2025
+             Available for new work in 2026
           </p>
           <h1 className="mt-6 font-display text-5xl leading-[1.05] text-foreground md:text-7xl">
             Mobile apps designed
@@ -25,7 +25,7 @@ export default function IndexPage() {
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
             I&apos;m Adesola — a product designer and engineer crafting iOS and Android
-            apps for thoughtful teams. Eight years, twenty plus shipped products.
+            apps for thoughtful teams. Three years, ten plus shipped products.
           </p>
           <div className="mt-10 flex items-center gap-6 text-sm">
             <Link
