@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import type { Project } from "@/data/projects";
 
 type Props = {
@@ -8,11 +8,7 @@ type Props = {
 
 export function ProjectCard({ project, priority = false }: Props) {
   return (
-    <Link
-      to="/work/$slug"
-      params={{ slug: project.slug }}
-      className="group block"
-    >
+    <Link to={`/work/${project.slug}`} className="group block">
       <article>
         <div className="hover-lift overflow-hidden rounded-2xl bg-muted">
           <img

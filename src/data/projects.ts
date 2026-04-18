@@ -1,3 +1,4 @@
+import { supabase } from "@/lib/supabase";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -16,6 +17,7 @@ export type Project = {
   year: string;
   summary: string;
   image: string;
+  gallery: string[];
   tags: string[];
   role: string;
   timeline: string;
@@ -37,6 +39,7 @@ export const projects: Project[] = [
     summary:
       "A meditation companion built around breath, silence and gentle haptics. Designed and shipped end-to-end in Swift.",
     image: project1,
+    gallery: [],
     tags: ["SwiftUI", "HealthKit", "Design"],
     role: "Lead designer & iOS engineer",
     timeline: "6 months · 2024",
@@ -68,6 +71,7 @@ export const projects: Project[] = [
     summary:
       "A workout tracker for runners with adaptive plans, beautiful charts and a soft, motivating tone of voice.",
     image: project2,
+    gallery: [],
     tags: ["React Native", "Charts", "UX"],
     role: "Product designer & RN engineer",
     timeline: "9 months · 2023 — 2024",
@@ -99,6 +103,7 @@ export const projects: Project[] = [
     summary:
       "A recipe app that turns weeknight cooking into a calm ritual. Offline-first with smart shopping lists.",
     image: project3,
+    gallery: [],
     tags: ["SwiftUI", "Core Data", "Branding"],
     role: "Designer, brand & iOS engineer",
     timeline: "5 months · 2023",
@@ -130,6 +135,7 @@ export const projects: Project[] = [
     summary:
       "A consumer banking app rebuilt from scratch — focused on clarity, accessibility and trust.",
     image: project4,
+    gallery: [],
     tags: ["Kotlin", "Swift", "Accessibility"],
     role: "Design lead & mobile engineer",
     timeline: "12 months · 2022 — 2023",
@@ -156,4 +162,23 @@ export const projects: Project[] = [
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+export async function fetchProjects(): Promise<Project[]> {
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .order("year", { ascending: false });
+  if (error || !data?.length) return projects;
+  return data as Project[];
+}
+
+export async function fetchProject(slug: string): Promise<Project | undefined> {
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+  if (error || !data) return getProject(slug);
+  return data as Project;
 }

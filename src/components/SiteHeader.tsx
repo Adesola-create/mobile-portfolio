@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { NavLink, Link } from "react-router-dom";
 
 const navItems = [
   { to: "/", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function SiteHeader() {
   return (
@@ -15,16 +15,16 @@ export function SiteHeader() {
         </Link>
         <nav className="flex items-center gap-8 text-sm">
           {navItems.map((item) => (
-            <Link
+            <NavLink
               key={item.to}
               to={item.to}
-              activeOptions={{ exact: true }}
-              activeProps={{ className: "text-foreground" }}
-              inactiveProps={{ className: "text-muted-foreground hover:text-foreground" }}
-              className="transition-colors duration-300"
+              end
+              className={({ isActive }) =>
+                `transition-colors duration-300 ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`
+              }
             >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
       </div>

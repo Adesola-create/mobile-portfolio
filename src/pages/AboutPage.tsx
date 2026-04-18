@@ -1,25 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import portrait from "@/assets/portrait.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Maya Chen" },
-      {
-        name: "description",
-        content:
-          "About Maya Chen — eight years designing and building mobile apps for wellness, fitness, finance and food brands.",
-      },
-      { property: "og:title", content: "About — Maya Chen" },
-      {
-        property: "og:description",
-        content:
-          "Eight years designing and building mobile apps for thoughtful teams.",
-      },
-    ],
-  }),
-  component: AboutPage,
-});
 
 const skills = [
   { label: "Design", items: ["Product design", "Interaction", "Motion", "Brand systems"] },
@@ -34,7 +14,7 @@ const timeline = [
   { year: "2017", role: "BFA Interaction Design · RISD", note: "" },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <div className="grid gap-16 md:grid-cols-12">
@@ -90,16 +70,11 @@ function AboutPage() {
             <h3 className="font-display text-2xl text-foreground">Path</h3>
             <ul className="mt-6 divide-y divide-border">
               {timeline.map((entry) => (
-                <li
-                  key={entry.year + entry.role}
-                  className="grid grid-cols-[80px_1fr] gap-6 py-4 text-sm"
-                >
+                <li key={entry.year + entry.role} className="grid grid-cols-[80px_1fr] gap-6 py-4 text-sm">
                   <span className="text-muted-foreground">{entry.year}</span>
                   <div>
                     <p className="text-foreground">{entry.role}</p>
-                    {entry.note && (
-                      <p className="mt-0.5 text-muted-foreground">{entry.note}</p>
-                    )}
+                    {entry.note && <p className="mt-0.5 text-muted-foreground">{entry.note}</p>}
                   </div>
                 </li>
               ))}

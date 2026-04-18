@@ -1,30 +1,18 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { fetchProjects } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Maya Chen — Mobile App Designer & Developer" },
-      {
-        name: "description",
-        content:
-          "Selected mobile app work by Maya Chen — independent designer and developer crafting calm, considered iOS and Android products.",
-      },
-      { property: "og:title", content: "Maya Chen — Mobile App Designer & Developer" },
-      {
-        property: "og:description",
-        content: "Selected mobile app work — calm, considered iOS and Android products.",
-      },
-    ],
-  }),
-  component: Index,
-});
+export default function IndexPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
 
-function Index() {
+  useEffect(() => {
+    fetchProjects().then(setProjects);
+  }, []);
+
   return (
     <>
-      {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
         <div className="fade-in-up max-w-3xl">
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
@@ -56,12 +44,9 @@ function Index() {
         </div>
       </section>
 
-      {/* Work */}
       <section className="mx-auto max-w-6xl px-6 pb-32">
         <div className="mb-12 flex items-end justify-between">
-          <h2 className="font-display text-3xl text-foreground md:text-4xl">
-            Selected work
-          </h2>
+          <h2 className="font-display text-3xl text-foreground md:text-4xl">Selected work</h2>
           <p className="text-sm text-muted-foreground">2023 — 2024</p>
         </div>
         <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
