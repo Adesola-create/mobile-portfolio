@@ -7,9 +7,9 @@ function ContactForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form)) as { name: string; email: string; message: string };
-    const subject = encodeURIComponent(`Portfolio enquiry from ${data.name}`);
-    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-    window.location.href = `mailto:adesola@email.com?subject=${subject}&body=${body}`;
+    const subject = encodeURIComponent(`Enquiry from ${data.name}`);
+    const body = encodeURIComponent(`${data.message}`);
+    window.location.href = `mailto:aminatadeyemi42@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (
