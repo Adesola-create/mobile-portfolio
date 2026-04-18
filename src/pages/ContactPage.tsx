@@ -58,14 +58,14 @@ export default function ContactPage() {
         <ContactForm />
 
         <div className="mt-14 space-y-8">
-          <a href="mailto:hello@mayachen.design" className="group block border-b border-border pb-6">
+          <a href="mailto:aminatadeyemi42@gmail.com" className="group block border-b border-border pb-6">
             <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</p>
             <p className="mt-2 font-display text-2xl text-foreground transition-colors duration-300 group-hover:text-accent md:text-3xl">
-              hello@mayachen.design
+              aminatadeyemi42@gmail.com
             </p>
           </a>
-          <a href="https://cal.com" className="group block border-b border-border pb-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Schedule</p>
+          <a href="tel:07085807350" className="group block border-b border-border pb-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Phone</p>
             <p className="mt-2 font-display text-2xl text-foreground transition-colors duration-300 group-hover:text-accent md:text-3xl">
               Book a 30-minute intro call →
             </p>

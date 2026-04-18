@@ -24,7 +24,7 @@ export default function IndexPage() {
             with <em className="text-accent not-italic">care</em>, built to last.
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            I&apos;m Maya — a product designer and engineer crafting iOS and Android
+            I&apos;m Adesola — a product designer and engineer crafting iOS and Android
             apps for thoughtful teams. Eight years, twenty plus shipped products.
           </p>
           <div className="mt-10 flex items-center gap-6 text-sm">

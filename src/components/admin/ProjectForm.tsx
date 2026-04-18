@@ -217,16 +217,6 @@ export function ProjectForm({ initial, onSubmit, submitLabel = "Save project" }:
         <textarea className={`${inputCls} resize-none`} rows={4} value={form.outcome} onChange={(e) => set("outcome", e.target.value)} placeholder="The outcome…" required />
       </Field>
 
-      <Field label={'Metrics (one per line, format: "Label | Value")'}>
-        <textarea
-          className={`${inputCls} resize-none`}
-          rows={4}
-          value={form.metrics.map((m) => `${m.label} | ${m.value}`).join("\n")}
-          onChange={(e) => setMetrics(e.target.value)}
-          placeholder={"App Store rating | 4.9\nAvg. session length | 11 min\nD30 retention | 62%"}
-        />
-      </Field>
-
       <div className="flex items-center gap-4 pt-2">
         <button
           type="submit"

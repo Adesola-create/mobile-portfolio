@@ -192,14 +192,6 @@ export default function WorkPage() {
           <div>
             <h2 className="font-display text-2xl text-foreground md:text-3xl">Outcome</h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{project.outcome}</p>
-            <dl className="mt-10 grid grid-cols-1 gap-6 border-t border-border/60 pt-10 sm:grid-cols-3">
-              {project.metrics.map((metric) => (
-                <div key={metric.label}>
-                  <dt className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{metric.label}</dt>
-                  <dd className="mt-3 font-display text-3xl text-foreground">{metric.value}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
       </section>

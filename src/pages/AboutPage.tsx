@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-2xl bg-muted">
             <img
               src={portrait}
-              alt="Portrait of Maya Chen"
+              alt="Portrait of Adesola Adeyemi"
               width={1024}
               height={1280}
               className="aspect-[4/5] w-full object-cover"
