@@ -47,7 +47,7 @@ export default function IndexPage() {
       <section className="mx-auto max-w-6xl px-6 pb-32">
         <div className="mb-12 flex items-end justify-between">
           <h2 className="font-display text-3xl text-foreground md:text-4xl">Selected work</h2>
-          <p className="text-sm text-muted-foreground">2023 — 2024</p>
+          <p className="text-sm text-muted-foreground">2024 — 2026</p>
         </div>
         <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
           {projects.map((project, i) => (
