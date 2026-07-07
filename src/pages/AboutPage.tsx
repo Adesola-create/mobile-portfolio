@@ -38,17 +38,15 @@ export default function AboutPage() {
           </h1>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
-              For the last three years I&apos;ve worked at the intersection of design
-              and engineering — inside teams at Livepetal Systems Limited in Nigeria.
+              I'm a product designer and engineer with three years of experience building at the intersection of design and technology, with experience at companies including Livepetal Systems Limited in Nigeria.
+               I work with a small number of clients at a time, embedding deeply in each project — owning the full journey from research and design through prototyping to shipping production-ready mobile apps in SwiftUI, Kotlin, and Flutter.
             </p>
             <p>
-              I focus on a handful of clients each year. The work is usually end to
-              end: research, product design, prototyping, and shipping the real
-              thing in SwiftUI, Kotlin or Flutter.
+              Recent work includes TimeTrack Pro, a workforce management app that helps organizations monitor staff activity, track hours,
+              and ensure accountability, and PAAM, a faith-based platform bringing devotionals, events, digital giving, and an AI-powered biblical assistant into one seamless experience.
             </p>
             <p>
-              Outside of client work, I design and style unisex outfits, exploring fabrics, colors, and form. This creative practice sharpens my sense of aesthetics and directly influences my approach to UI/UX design, where I focus on clarity, balance, and expressive user experiences.
-            </p>
+              Outside client work, I design and style unisex outfits, experimenting with fabric, color, and form — a practice that sharpens my eye for balance and proportion and directly shapes my approach to UI/UX: clean, considered, and expressive.</p>
           </div>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
